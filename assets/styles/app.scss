@@ -1,0 +1,192 @@
+$BackgroundColor:#0f0f11;
+$fontColor : #ffc107;
+$fontTitle: 'Pinyon Script', cursive;
+$fontAbout : 'Bad Script', cursive;
+
+body, hr, .navbar, .container, .jumbotron, .card-title, .card-body, .modal-body{
+    background-color: $BackgroundColor;
+}
+hr{
+    border: 2px solid $fontColor;
+}
+.titleGoldenBook, .portfolioTitle, .textGoldenBook{
+    font-family: $fontTitle;
+    font-size: 4rem;
+}
+.bookTitlePhoto{
+    min-height: 50vh;
+}
+.nameGoldenBook{
+    font-family: $fontTitle;
+    font-size: 3rem;
+}
+.titleLine {
+    font-family: $fontTitle;
+    font-size: 4rem;
+    display: table;
+    white-space: nowrap;
+    text-align: center;
+    margin: auto;
+    &:before, &:after {
+        border-top: 1px solid $fontColor;
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 0.75em;
+        width: 25%;
+    }
+    &:before { right: 1.5%; }
+    &:after { left: 1.5%; }
+}
+.opacityTitle{
+    opacity:0.5;
+}
+.photoTitle{
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1); 
+    &:hover {
+        filter: grayscale(0);
+        -webkit-filter: grayscale(0);
+        border: solid 3px $fontColor;
+    }
+}
+.banner{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover; 
+    object-position: 50% 10%;
+}
+#bannerTitle{
+    position: absolute;
+    color:$fontColor;
+    top:50%; 
+    width: 100%;
+    font-size: 5vw;
+    text-align: center;
+    letter-spacing: 4vw;
+    opacity: 50%;
+}
+.photoFrame {
+    position: relative;
+    left:5vw;
+    bottom:5vh;
+}
+.frame{
+    border : solid 1px $fontColor;
+}
+.aboutText{
+    font-family: $fontAbout;
+}
+.pagination{
+    justify-content: center;
+}
+.page-item.active{
+    .page-link{
+        background-color: $fontColor;
+        color:$BackgroundColor;
+        border-color: $BackgroundColor;
+    }
+}
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    background-color:$fontColor;
+    color:$BackgroundColor;
+    border-color:$fontColor;
+}
+.page-item.disabled {
+    background-color: $BackgroundColor;
+    color: $fontColor;
+    .page-link{
+        background-color: $BackgroundColor;
+        color: $fontColor;
+        &:hover {
+            background-color: $fontColor;
+        }
+    }
+}
+.page-link{
+    background-color: $BackgroundColor;
+    color: $fontColor;
+}
+.copyright{
+    color: grey;
+    &:hover{
+        color:$fontColor;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .titleLine {
+        font-size: 2.5rem
+    }
+    .textGoldenBook{
+        font-size: 2rem;
+    }
+}
+@media only screen and (min-width:426px) and (max-width: 768px) {
+    .titleLine {
+        font-size: 3rem
+    }
+}
+@media only screen and (max-width: 991px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(4,1fr); 
+        grid-template-rows: repeat(8,1fr); 
+        grid-gap: 2vmin; // 2% de la valeur la plus petite entre la la hauteur et la largeur de la fenetre
+        justify-items: center; // placement des elements par rapport a leurs parents dans le sens horizontal
+        align-items: center;  // "" sens vertical
+        img {
+            filter: grayscale(1);
+            -webkit-filter: grayscale(1); 
+            grid-column: span 2; // nombre de colonne utilisé par image
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); 
+            transition: all .25s; // vitesse de transition       
+            margin-bottom: -82%;           
+            &:nth-child(3n + 1) {
+                grid-column: 2 / span 2; // commence a la colone 2 et prend 2 colonnes
+            } 
+            &:nth-child(0n + 8) {
+                grid-column: 1 / span 2; // commence a la colone 2 et prend 2 colonnes
+            }   
+            &:hover {
+                filter: grayscale(0);
+                -webkit-filter: grayscale(0);
+                z-index: 2; // index de l image a la souris
+                transform: scale(1.5); // multiplie par 2 sa taille a la souris
+            }
+        }
+    }       
+}
+@media only screen and (min-width: 992px) {
+    .portfolioTitle{
+        font-size:5em;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(8,3fr); //8 colonne de 3 sur 24 (8*3)
+        grid-template-rows: repeat(4,1fr); // 4 ligne de 1 sur 4 (4*1)
+        grid-gap: 2vmin; // 2% de la valeur la plus petite entre la la hauteur et la largeur de la fenetre
+        justify-items: center; // placement des elements par rapport a leurs parents dans le sens horizontal
+        align-items: center;  // "" sens vertical
+        img {
+            margin-bottom: -82%;
+            filter: grayscale(1);
+            -webkit-filter: grayscale(1); 
+            grid-column: span 2; // nombre de colonne utilisé par image
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); // position X Y pour x=0 tout a gauche, pour y=0 tout en haut si x ou y =100 l inverse
+            transform: scale(1); // modifier la taille
+            transition: all .25s; // vitesse de transition
+            &:nth-child(7n + 1) {
+                grid-column: 2 / span 2; // commence a la colone 2 et prend 2 colonnes
+            } 
+            &:hover {
+                z-index: 2; // index de l image a la souris
+                transform: scale(1.5); // multiplie par 2 sa taille a la souris
+                filter: grayscale(0);
+                -webkit-filter: grayscale(0);
+            }
+        }
+    }
+}

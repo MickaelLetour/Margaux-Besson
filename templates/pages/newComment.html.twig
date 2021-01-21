@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title 'Ajouter un commentaire' %}
+
+{% block body %}
+    <div class="container mt-4 min-vh-100">
+        {{ form_start(form) }}
+        <div class="row justify-content-center m-auto text-warning">
+            <h1 class="col-md-7 my-3 text-center m-auto">Ajouter un commentaire</h1>
+            <div class="col-10 col-sm-7 col-lg-7 mt-4">
+                {{ form_row(form.name) }}
+            </div>
+            <div class="col-10 col-sm-7 col-lg-7">
+                {{ form_row(form.comment) }}
+            </div>
+            <div class="col-10 col-sm-7 col-lg-7 mt-4">
+                <button class="btn btn-dark border border-warning text-warning">Ajouter</button>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av ./ bs9ot_margauxbesson@besson-photographe.com:~/margauxbesson --include=public/build --include=public/build/.htaccess --exclude-from=.gitignore --exclude=".*"

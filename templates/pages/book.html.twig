@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title 'Margaux Besson/Portfolio' %}
+
+{% block body %}
+<div class="container-fluid p-5 min-vh-100">
+    <div class="jumbotron">
+        <h1 class="portfolioTitle text-warning text-center">Portfolio</h1>
+        <h3 class="text-light text-center mt-5">A mon avis, vous ne pouvez pas dire que vous avez vu quelque chose à fond si vous n'en avez pas pris une photographie révélant un tas de détails, qui autrement ne pourraient pas même être discernés.<br> <span itemscope itemtype="http://schema.org/Person"><a class="text-warning" href="https://fr.wikipedia.org/wiki/%C3%89mile_Zola" itemprop="url">Emile Zola</a></span></h3>
+    </div>
+    <div class="bookTitlePhoto row justify-content-center align-items-center m-auto">
+        <div class="row justify-content-center align-items-center">
+           {% for title in titles %} 
+               <div class="col-12 col-sm-10 col-md-8 col-lg-3 mx-auto my-3">
+                   <div class="card border-0">
+                       <div class="card-body p-0">
+                           <a class="text-warning" href="{{path('photo.show', {theme: title.0.theme, slug: title.0.slug }) }}">
+                               <img class="photoTitle img-fluid max-width: 100% height:auto rounded" src="{{ title.0.title }}" alt="{{ title.0.title }}">
+                               <div class="card-title m-auto">
+                                   <h4 class="text-center">{{ title.0.themeType |upper }}</h4>
+                               </div>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           {% endfor %}
+        </div>
+    </div>
+{% endblock %}

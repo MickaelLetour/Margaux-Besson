@@ -1,0 +1,73 @@
+{% extends "base.html.twig" %}
+
+{% block title 'Margaux Besson/Tarifs' %}
+
+{% block body %}
+    <div class="container justify-content-center align-items-center mt-4">
+        
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-sucess bg-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% if not form.vars.valid %}
+            <div class="alert alert-danger">
+                Erreur dans la validation du contenu du formulaire
+            </div>
+        {% endif %}
+
+        <div class="row m-auto justify-content-center align-items-center min-vh-100">
+
+            <h1 class="text-center text-warning col-12 text-uppercase">Tarifs</h1>
+        
+            <div class="row py-5 m-auto text-warning justify-content-center col-12 col-sm-8 col-lg-5">
+                <div>
+                    <div>
+                        <h2 class="text-center text-uppercase">street art</h2>
+                        <ul>
+                            <li>Déplacement sur Lisbonne et ses environs</li>
+                            <li>Envoie de 20 photos minimum retouchées</li>
+                        </ul>
+                        <h5 class="text-center text-uppercase">a partir de 50 €</h5>
+                    </div>
+                    <hr class="my-4 rounded">
+                    <div>
+                        <h2 class="text-center text-uppercase">portraits</h2>
+                        <ul>
+                            <li>Déplacement sur Lisbonne et ses environs</li>
+                            <li>Envoie de 20 photos minimum retouchées</li>
+                        </ul>
+                        <h5 class="text-center text-uppercase">a partir de 30 €</h5>
+                    </div>
+                    <hr class="my-4 rounded">
+                    <div>
+                        <h2 class="text-center text-uppercase">evenements</h2>
+                        <ul>
+                            <li>Déplacement</li>
+                            <li>Envoie de 20 photos minimum retouchées</li>
+                            <li>Création d'un album photo sur demande</li>
+                        </ul>
+                        <h5 class="text-center text-uppercase">sur devis</h5>
+                        <p class="text-center text-light mt-4">Pour toute information complémentaire (shooting studio, mariage, EVJF), vous pouvez me contacter directement via le formulaire de contact ci-joint. Je me ferais un plaisir de vous répondre dans les plus bref délais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-5 m-auto border border-warning rounded justify-content-center col-12 col-sm-8 col-lg-5" id="contactForm">
+                <h2 class="text-warning text-center text-uppercase">Contact</h2>
+                {{ form_start(form) }}
+                    <div class="text-warning form-group py-4">
+                        <div class="col-lg-10 m-auto">{{ form_row(form.firstname) }}</div>
+                        <div class="col-lg-10 m-auto">{{ form_row(form.lastname) }}</div>
+                        <div class="col-lg-10 m-auto">{{ form_row(form.phone) }}</div>
+                        <div class="col-lg-10 m-auto">{{ form_row(form.email) }}</div>
+                        <div class="col-lg-10 m-auto">{{ form_row(form.message) }}</div>
+                        <div class="col-lg-10 m-auto"><button class="btn btn-dark border border-warning text-warning mt-3">Envoyer</button></div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

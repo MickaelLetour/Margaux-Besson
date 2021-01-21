@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /*.css?*
+Sitemap: https://www.besson-photographe.com//sitemap.xml 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="fr"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Photographe, Photographe à Lisbonne, Lisbonne, Mariage, Evènements, portraits, street art, naissance, capture de moments, photos souvenirs">
+        <meta name="google-site-verification" content="Ikyrv3JCoJ14_hbOMu_lCU_IrwxsLRX68eaVsP7UvLY" />
+        <title>{% block title %}Photographe à Lisbonne{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@besson_margaux">
+        <meta name="twitter:title" content="Mon site de photographie">
+        <meta name="twitter:description" content="Le site vous montrera toutes mes plus belles photos">
+        <meta name="twitter:image" content="https://i.imgur.com/n22ZuL1.jpg?1">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Mon site de photographie">
+        <meta property="og:description" content="Le site vous montrera toutes mes plus belles photos">
+        <meta property="og:site_name" content="Site web de Margaux Besson">
+        <meta property="og:url" content="https://www.besson-photographe.com/">
+        <meta property="og:image" content="https://i.imgur.com/n22ZuL1.jpg?1">
+        <meta property="og:image:alt" content="Logo de Margaux Besson" />
+        <meta property="og:image:width" content="776" />
+        <meta property="og:image:height" content="627" />
+        <link rel="canonical" href="https://www.besson-photographe.com/" />
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Cutive+Mono&display=swap" rel="stylesheet">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js'></script>
+        <script type="application/ld+json">
+            {
+                "@context": "http://www.schema.org",
+                "@type": "WebSite",
+                "name": "besson-photographe",
+                "alternateName": "Photographe à Lisbonne",
+                "url": "https://www.besson-photographe.com/",
+            	"sameAs": ["https://mobile.twitter.com/besson_margaux","https://www.facebook.com/margaux.besson.9","https://www.instagram.com/margaux_besson/","https://www.linkedin.com/in/margaux-besson-31b704130/"]
+            }
+        </script>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-top border-bottom border-warning">    
+            <a class="navbar-brand text-uppercase text-warning" href="{{ path('home') }}">Margaux Besson</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'about' %}active{% endif %}" href="{{ path('about') }}">A  Propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'book' %}active{% endif %}" href="{{ path('book') }}">Portfolio</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'price' %}active{% endif %}" href="{{ path('price') }}">Tarifs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'comments' %}active{% endif %}" href="{{ path('comments') }} ">Livre d'or</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="https://www.instagram.com/margaux_besson/">
+                            <img class="rounded-circle" src="https://i.pinimg.com/originals/ec/04/f1/ec04f170dcde924a62c1dd028d2e593e.jpg" width="30" height="30" alt="logo instagram" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="https://mobile.twitter.com/besson_margaux">
+                            <img class="rounded-circle" src="https://cdn.pixabay.com/photo/2017/03/24/07/28/twitter-2170426_960_720.png" width="30" height="30" alt="logo twitter" loading="lazy">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="https://www.facebook.com/margaux.besson.9">
+                            <img class="rounded-circle" src="https://www.facebook.com/images/fb_icon_325x325.png" width="30" height="30" alt="logo facebook" loading="lazy">
+                        </a>
+                    </li>
+                {% if app.user %}
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{ path('logout') }}" class="nav-link text-warning">Se déconnecter</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </div>
+    </nav>
+
+    {% block body %}   
+    
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="text-center text-lg-start">   
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          <span class="text-secondary">© 2020 Copyright:</span>
+          <a class="copyright" href="https://www.cvmickaelletour.com/">Mickael Letour</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    {% block javascripts %}
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox()
+    });
+    </script> 
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    
+</html>

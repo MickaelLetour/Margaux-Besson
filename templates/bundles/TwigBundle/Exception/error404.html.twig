@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée{% endblock %}
+
+{% block body %}
+<div class="container mt-4 min-vh-100 row justify-content-center">
+    <div class="text-warning">
+        <h1 >Page non trouvée</h1>
+        <p>La page que vous cherchez n'a pas été trouvée</p>
+        <p>Le code est : {{status_code}}</p>
+        <p>Le texte est : {{status_text}}</p>
+        <p>Nous vous invitons à retourner à l'accueil en cliquant sur ce lien : <a href="https://www.besson-photographe.com/">Photographe Margaux Besson à Lisbonne</a></p>
+    </div>
+</div>
+{% endblock %}

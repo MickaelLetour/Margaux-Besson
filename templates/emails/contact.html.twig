@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="container-fluid p-0 row justify-content-center m-auto">
+
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>Prénom</td>
+                    <td>{{ contact.firstname }}</td>
+                </tr>
+                <tr>
+                    <td>Nom</td>
+                    <td>{{ contact.lastname }}</td>
+                </tr>
+                <tr>
+                    <td>Téléphone</td>
+                    <td>{{ contact.phone }}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{ contact.email }}</td>
+                </tr>
+                <tr>
+                    <td>Message</td>
+                    <td>{{ contact.message }}</td>
+                </tr>
+            </tbody>
+        </table> 
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    <div class="col-md-4 my-3 m-auto text-center"><img class="img-fluid rounded" src="{{ photo.title }}" width="200px" alt="{{ photo.title }}"/></div>
+    <div class="col-md-4 my-3 m-auto text-warning">{{ form_row(form.title) }}</div>
+    <div class="col-md-4 my-3 m-auto text-warning">{{ form_row(form.theme) }}</div>
+    <div class="col-md-4 my-3 m-auto text-warning">{{ form_row(form.orientation) }}</div>
+    <div class="col-md-4 my-3 m-auto text-warning">{{ form_row(form.header) }}</div>
+    <div class="col-md-4 my-3 m-auto text-warning"><button class="btn btn-dark border border-warning text-warning my-3">{{ button|default('Valider') }}</button></div>
+    
+{{ form_end(form) }}

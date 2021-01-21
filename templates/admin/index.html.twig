@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block title 'Gestion des photographies' %}
+
+{% block body %}
+
+<h1 class="text-center text-warning mt-4">Gérer les photos</h1>
+
+<div class="jumbotron mt-5">
+    <div class="container">
+        {{ form_start(form) }} 
+        <div class="form-row justify-content-center m-auto text-warning">
+            <div class="col-10 col-sm-7 col-lg-4">
+                {{ form_row(form.theme) }}
+            </div>
+            <div class="col-10 col-sm-7 col-lg-4">
+                {{ form_row(form.header) }}
+            </div>
+            <div class="col-10 col-sm-7 col-lg-4 mt-4">
+                <button class="btn btn-dark border border-warning text-warning mt-2">Rechercher</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+    <div class="container mt-4">
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-sucess bg-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="text-end mb-4">
+            <a href="{{ path('admin.photo.new') }}" class="btn btn-dark border border-warning text-warning">Ajouter une nouvelle photo</a>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-light">Photo</th>
+                    <th class="text-light">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for photo in photos %} 
+                <tr>
+                    <td>
+                        <img class="img-fluid rounded my-3" src="{{ photo.title }}" width="100px" alt="{{ photo.title }}"/>
+                    </td>
+                    <td class="align-middle">
+                        <a href="{{ path('admin.photo.edit', {id: photo.id}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="post" action="{{ path('admin.photo.delete', {id: photo.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sûr ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ photo.id) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+        <div class="navigation">
+            {{ knp_pagination_render(photos, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
+        </div>       
+    </div>
+{% endblock %}
