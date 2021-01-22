@@ -2,6 +2,16 @@
 
 {% block title %}Margaux Besson/{{ photos[0].themeType }}{% endblock %}
 
+{% if photos[0].themeType == "Street Art" %}
+    {% block metaTag %}<meta name="description" content="Photographe à Lisbonne voici ici mes plus belles photos dans les thèmes du street art, ici vous pouvez retrouver que des shootings bruts et intemporel">{% endblock %}
+{% elseif photos[0].themeType == "Portraits" %}
+    {% block metaTag %}<meta name="description" content="Photographe à Lisbonne voici ici mes plus beaux portraits, les shootings photos tournées sur les émotions du visage et le regard donnent toujours des photos incroyables">{% endblock %}
+{% elseif photos[0].themeType == "Evenements" %}
+    {% block metaTag %}<meta name="description" content="Photographe à Lisbonne vous pouvez retrouver ici tous les moments incroyables que j’ai capturé, les mariages, baptême, EVJF, tous ces moments qui sont nécessaire de ne pas oublier">{% endblock %}
+{% endif %}
+
+
+
 {% block body %}
     <div class="container-fluid p-0 m-auto justify-content-center">
         {% for photo in photos %} 

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Photographe, Photographe à Lisbonne, Lisbonne, Mariage, Evènements, portraits, street art, naissance, capture de moments, photos souvenirs">
+        {% block metaTag %}<meta name="description" content="Photographe à Lisbonne et partout dans le monde, je serais ravie de vous prendre en photo lors de vos évènements (mariage, anniversaire, baptême etc)">{% endblock %}
         <meta name="google-site-verification" content="Ikyrv3JCoJ14_hbOMu_lCU_IrwxsLRX68eaVsP7UvLY" />
         <title>{% block title %}Photographe à Lisbonne{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,6 +39,15 @@
                 "url": "https://www.besson-photographe.com/",
             	"sameAs": ["https://mobile.twitter.com/besson_margaux","https://www.facebook.com/margaux.besson.9","https://www.instagram.com/margaux_besson/","https://www.linkedin.com/in/margaux-besson-31b704130/"]
             }
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-187863707-1%22%3E"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-187863707-1');
         </script>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
