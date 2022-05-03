@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Notification;
 
 use Twig\Environment;
@@ -29,8 +29,8 @@ class ContactNotification extends AbstractController{
      */
     public function notify(Contact $contact){
         $message = (new Email())
-            ->from($contact->getEmail()) 
-            ->to('margaux.besson@besson-photographe.com')
+            ->from($contact->getEmail())
+            ->to('margaux.besson@gmail.com')
             ->html($this->renderer->render('emails/contact.html.twig', [
                 'contact' => $contact
                 ]), 'text/html');

@@ -1,17 +1,17 @@
 {% extends "base.html.twig" %}
 
 {% block title 'Margaux Besson/Livre d\'or' %}
-{% block metaTag %}<meta name="description" content="N'hésitez surtout pas à laisser un commentaire à propos de votre shooting avec Margaux Besson, photographe à Lisbonne">{% endblock %}
+{% block metaTag %}<meta name="description" content="N'hésitez surtout pas à laisser un commentaire à propos de votre shooting avec Margaux Besson, photographe à en Charente Maritime">{% endblock %}
 
 {% block body %}
-    <div class="container min-vh-100 justify-content-center m-auto">
+    <div class="container main justify-content-center m-auto">
 
         {% for message in app.flashes('success') %}
             <div class="alert alert-sucess bg-success mt-4">
                 {{ message }}
             </div>
         {% endfor %}
-        
+
         <h1 class="titleGoldenBook text-center mt-5 text-warning border border-warning px-5 py-2">Livre D'or</h1>
         <p class="textGoldenBook text-center text-light mb-4">Parceque votre avis compte, nous vous laissons la parole.</p>
         {% for comment in comments %}
@@ -33,6 +33,6 @@
         </div>
         <div class="navigation m-auto">
             {{ knp_pagination_render(comments, '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig') }}
-        </div>   
+        </div>
     </div>
 {% endblock %}

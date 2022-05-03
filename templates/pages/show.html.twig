@@ -2,34 +2,36 @@
 
 {% block title %}Margaux Besson/{{ photos[0].themeType }}{% endblock %}
 
-{% if photos[0].themeType == "Street Art" %}
-    {% block metaTag %}<meta name="description" content="Photographe à Lisbonne voici ici mes plus belles photos dans les thèmes du street art, ici vous pouvez retrouver que des shootings bruts et intemporel">{% endblock %}
-{% elseif photos[0].themeType == "Portraits" %}
-    {% block metaTag %}<meta name="description" content="Photographe à Lisbonne voici ici mes plus beaux portraits, les shootings photos tournées sur les émotions du visage et le regard donnent toujours des photos incroyables">{% endblock %}
-{% elseif photos[0].themeType == "Evenements" %}
-    {% block metaTag %}<meta name="description" content="Photographe à Lisbonne vous pouvez retrouver ici tous les moments incroyables que j’ai capturé, les mariages, baptême, EVJF, tous ces moments qui sont nécessaire de ne pas oublier">{% endblock %}
-{% endif %}
+{% block metaTag %}
+    {% if photos[0].themeType == "Street Art" %}
+        <meta name="description" content="Photographe en Charente Maritime voici ici mes plus belles photos dans les thèmes du street art, ici vous pouvez retrouver que des shootings bruts et intemporel">
+    {% elseif photos[0].themeType == "Portraits" %}
+        <meta name="description" content="Photographe en Charente Maritime voici ici mes plus beaux portraits, les shootings photos tournées sur les émotions du visage et le regard donnent toujours des photos incroyables">
+    {% elseif photos[0].themeType == "Evenements" %}
+        <meta name="description" content="Photographe en Charente Maritime vous pouvez retrouver ici tous les moments incroyables que j’ai capturé, les mariages, baptême, EVJF, tous ces moments qui sont nécessaire de ne pas oublier">
+    {% endif %}
+{% endblock %}
 
 
 
 {% block body %}
     <div class="container-fluid p-0 m-auto justify-content-center">
-        {% for photo in photos %} 
+        {% for photo in photos %}
             {% if photo.header == 3 %}
                 <div class="row min-vh-100 align-items-center m-auto">
                     <div class="col-12 p-0 flex">
-                        <img class="banner rounded" src="{{ photo.title }}" alt="{{ photo.title }}"> 
+                        <img class="banner rounded" src="{{ photo.title }}" alt="{{ photo.title }}">
                         <h1 class="text-uppercase" id="bannerTitle"> {{ photo.themeType}}</h1>
                     </div>
                 </div>
             {% endif %}
         {% endfor %}
-        {% for photo in photos %} 
+        {% for photo in photos %}
             {% if photo.header == 4 %}
-                <div class="row min-vh-100 align-items-center m-auto">
+                <div class="GoldenCarre row min-vh-100 align-items-center mx-auto">
                     <div class="col-10 col-sm-8 col-md-6 col-lg-5 col-xl-4 m-auto">
                         <div class="frame">
-                            <img class="photoFrame img-fluid max-width: 100% height:auto rounded" src="{{ photo.title }}" alt="{{ photo.title }}"> 
+                            <img class="photoFrame img-fluid max-width: 100% height:auto rounded" src="{{ photo.title }}" alt="{{ photo.title }}">
                         </div>
                     </div>
                     <div class="col-10 col-sm-8 col-md-5 col-lg-5 m-auto text-warning">
@@ -37,7 +39,7 @@
                         {% if photo.themeType == "Street Art" %}
                             <p class="text-center text-warning">La rue est un des premiers décors en photo et c’est évidemment mon préféré. Les lieux urbex, les parcs, les quartiers moderne, ce décors si brut mais remplis d’âme. Alors, si vous aimez les jeans, les basket, et le style urbain, c’est le shooting qu’il vous faut.</p>
                         {% elseif photo.themeType == "Portraits" %}
-                            <p class="text-center text-warning">C’est le premier shooting par excellence, l’intemporelle de la photo, le classique, l’indémodable portrait. Le shooting ou vous êtes au centre de l’image, parcequ’en photographie ce n’est pas le photographe qui est important, mais bien vous.</p>
+                            <p class="text-ceter text-warning">C’est le premier shooting par excellence, l’intemporelle de la photo, le classique, l’indémodable portrait. Le shooting ou vous êtes au centre de l’image, parcequ’en photographie ce n’est pas le photographe qui est important, mais bien vous.</p>
                         {% elseif photo.themeType == "Evenements" %}
                             <p class="text-center text-warning">Parceque chaque instants est précieux, parceque certaines émotions sont temporaires, je propose de vous accompagner pour le jour de votre mariage, vos anniversaires, le baptême de vos enfants, pour tous les instants que vous souhaitez rendre éternelle. (un livret photo est offert pour chaque évènement)</p>
                         {% endif %}
@@ -45,12 +47,16 @@
                 </div>
             {% endif %}
         {% endfor %}
-        <div class="row flex min-vh-100 align-items-center justify-content-center m-auto">
-            {% for photo in photos %} 
+        <div class="min-vh-100 grid-masonry d-flex justify-content-center">
+            {% for photo in photos %}
                 {% if photo.header == 1 %}
-                <div class="row col-12 col-sm-6 col-lg-4 col-xl-3 mx-auto my-3 justify-content-center">
+                <div class="grid-masonry-item d-flex justify-content-center p-2 col-12 col-sm-8 col-md-6 col-lg-3">
                     <a class="linkLightbox" href="{{ photo.title }}" data-toggle="lightbox" data-gallery="gallery">
-                        <img class="img-fluid" src="{{ photo.title }}" alt="{{ photo.title }}"/>
+                        {% if photo.orientation == 1 %}
+                            <img class="img-fluid" src="{{ photo.title }}" alt="{{ photo.title }}"/>
+                        {% elseif photo.orientation == 2 %}
+                            <img class="img-fluid" src="{{ photo.title }}" alt="{{ photo.title }}"/>
+                        {% endif %}
                     </a>
                 </div>
                 {% endif %}

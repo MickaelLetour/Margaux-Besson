@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="e46c7c7d-775e-468d-9e66-44d5ea5483ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MargauxBesson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MargauxBesson.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy" beforeDir="false" afterPath="$PROJECT_DIR$/deploy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Notification/ContactNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notification/ContactNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/about.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/book.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/comments.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/comments.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/price.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/price.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/show.html.twig" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
@@ -166,42 +119,5 @@
       <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1mygGTLY0zLYMwQoGIoDYsMCYhc" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e46c7c7d-775e-468d-9e66-44d5ea5483ca" name="Default Changelist" comment="" />
-      <created>1610471149929</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1610471149929</updated>
-      <workItem from="1610471152902" duration="20000" />
-      <workItem from="1651057332815" duration="2110000" />
-      <workItem from="1651080673680" duration="4670000" />
-      <workItem from="1651141480881" duration="3952000" />
-      <workItem from="1651162383589" duration="3511000" />
-      <workItem from="1651228598583" duration="1892000" />
-      <workItem from="1651231534539" duration="1084000" />
-      <workItem from="1651232641808" duration="10068000" />
-      <workItem from="1651265780420" duration="53000" />
-      <workItem from="1651575601801" duration="1228000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
 </project>

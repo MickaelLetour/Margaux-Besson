@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#" lang="fr"> 
+<html prefix="og: http://ogp.me/ns#" lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        {% block metaTag %}<meta name="description" content="Photographe à Lisbonne et partout dans le monde, je serais ravie de vous prendre en photo lors de vos évènements (mariage, anniversaire, baptême etc)">{% endblock %}
+        {% block metaTag %}<meta name="description" content="Photographe en Charente Maritime et partout dans le monde, je serais ravie de vous prendre en photo lors de vos évènements (mariage, anniversaire, baptême etc)">{% endblock %}
         <meta name="google-site-verification" content="Ikyrv3JCoJ14_hbOMu_lCU_IrwxsLRX68eaVsP7UvLY" />
-        <title>{% block title %}Photographe à Lisbonne{% endblock %}</title>
+        <title>{% block title %}Photographe en Charente Maritime{% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@besson_margaux">
@@ -30,12 +30,14 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js'></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
         <script type="application/ld+json">
             {
                 "@context": "http://www.schema.org",
                 "@type": "WebSite",
                 "name": "besson-photographe",
-                "alternateName": "Photographe à Lisbonne",
+                "alternateName": "Photographe en Charente Maritime",
                 "url": "https://www.besson-photographe.com/",
             	"sameAs": ["https://mobile.twitter.com/besson_margaux","https://www.facebook.com/margaux.besson.9","https://www.instagram.com/margaux_besson/","https://www.linkedin.com/in/margaux-besson-31b704130/"]
             }
@@ -46,14 +48,14 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-        
+
           gtag('config', 'UA-187863707-1');
         </script>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-top border-bottom border-warning">    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-top border-bottom border-warning">
             <a class="navbar-brand text-uppercase text-warning" href="{{ path('home') }}">Margaux Besson</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -64,7 +66,7 @@
                         <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'about' %}active{% endif %}" href="{{ path('about') }}">A  Propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'book' %}active{% endif %}" href="{{ path('book') }}">Portfolio</a> 
+                        <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'book' %}active{% endif %}" href="{{ path('book') }}">Portfolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase text-warning {% if current_menu is defined and current_menu == 'price' %}active{% endif %}" href="{{ path('price') }}">Tarifs</a>
@@ -99,11 +101,11 @@
             </div>
     </nav>
 
-    {% block body %}   
-    
+    {% block body %}
+
     {% endblock %}
     <!-- Footer -->
-    <footer class="text-center text-lg-start">   
+    <footer class="text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
           <span class="text-secondary">© 2020 Copyright:</span>
@@ -116,9 +118,16 @@
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
             event.preventDefault();
             $(this).ekkoLightbox()
-    });
-    </script> 
+        });
+        var $grid = $('.grid-masonry').masonry({
+            itemSelector: '.grid-masonry-item'
+        });
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress( function() {
+            $grid.masonry('layout');
+        });
+    </script>
     {{ encore_entry_script_tags('app') }}
     {% endblock %}
-    
+
 </html>

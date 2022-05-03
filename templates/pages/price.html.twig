@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block title 'Margaux Besson/Tarifs' %}
-{% block metaTag %}<meta name="description" content="Photographe à Lisbonne vous pouvez retrouver ici tous les mes tarifs pour chacun des shootings personnalisés que nous pouvons créer ensemble">{% endblock %}
+{% block metaTag %}<meta name="description" content="Photographe en Charente Maritime vous pouvez retrouver ici tous les mes tarifs pour chacun des shootings personnalisés que nous pouvons créer ensemble">{% endblock %}
 
 {% block body %}
-    <div class="container justify-content-center align-items-center mt-4">
-        
+    <div class="container justify-content-center align-items-center">
+
         {% for message in app.flashes('success') %}
             <div class="alert alert-sucess bg-success">
                 {{ message }}
@@ -18,16 +18,16 @@
             </div>
         {% endif %}
 
-        <div class="row m-auto justify-content-center align-items-center min-vh-100">
+        <div class="main row m-auto justify-content-center align-items-center">
 
             <h1 class="text-center text-warning col-12 text-uppercase">Tarifs</h1>
-        
+
             <div class="row py-5 m-auto text-warning justify-content-center col-12 col-sm-8 col-lg-5">
                 <div>
                     <div>
                         <h2 class="text-center text-uppercase">street art</h2>
                         <ul>
-                            <li>Déplacement sur Lisbonne et ses environs</li>
+                            <li>Déplacement en Charente Maritime et ses environs</li>
                             <li>Envoie de 20 photos minimum retouchées</li>
                         </ul>
                         <h5 class="text-center text-uppercase">a partir de 50 €</h5>
@@ -36,7 +36,7 @@
                     <div>
                         <h2 class="text-center text-uppercase">portraits</h2>
                         <ul>
-                            <li>Déplacement sur Lisbonne et ses environs</li>
+                            <li>Déplacement en Charente Maritime et ses environs</li>
                             <li>Envoie de 20 photos minimum retouchées</li>
                         </ul>
                         <h5 class="text-center text-uppercase">a partir de 30 €</h5>
@@ -59,12 +59,14 @@
                 <h2 class="text-warning text-center text-uppercase">Contact</h2>
                 {{ form_start(form) }}
                     <div class="text-warning form-group py-4">
-                        <div class="col-lg-10 m-auto">{{ form_row(form.firstname) }}</div>
-                        <div class="col-lg-10 m-auto">{{ form_row(form.lastname) }}</div>
-                        <div class="col-lg-10 m-auto">{{ form_row(form.phone) }}</div>
-                        <div class="col-lg-10 m-auto">{{ form_row(form.email) }}</div>
-                        <div class="col-lg-10 m-auto">{{ form_row(form.message) }}</div>
-                        <div class="col-lg-10 m-auto"><button class="btn btn-dark border border-warning text-warning mt-3">Envoyer</button></div>
+                        <div class="m-auto">{{ form_row(form.firstname) }}</div>
+                        <div class="m-auto">{{ form_row(form.lastname) }}</div>
+                        <div class="m-auto">{{ form_row(form.phone) }}</div>
+                        <div class="m-auto">{{ form_row(form.email) }}</div>
+                        <div class="m-auto">{{ form_row(form.message) }}</div>
+                        <div class="m-auto d-flex justify-content-center">
+                            <button class="btn btn-dark border border-warning text-warning mt-3">Envoyer</button>
+                        </div>
                     </div>
                 {{ form_end(form) }}
             </div>

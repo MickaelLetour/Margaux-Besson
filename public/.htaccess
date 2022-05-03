@@ -8,11 +8,11 @@ DirectoryIndex index.php
     RewriteEngine On
     # Redirect HTTP to HTTPS
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
-    RewriteRule (.*) https://www.besson-photographe.com/$1 [R=301,L]
+    RewriteRule (.*) https://www.margauxbessonphotographe.com/$1 [R=301,L]
 
     # Redirect non-www to www
-    RewriteCond %{HTTP_HOST} ^besson-photographe\.com [NC]
-    RewriteRule ^(.*)$ https://www.besson-photographe.com/$1 [L,R=301]
+    RewriteCond %{HTTP_HOST} ^margauxbessonphotographe\.com [NC]
+    RewriteRule ^(.*)$ https://www.margauxbessonphotographe.com/$1 [L,R=301]
 
     RewriteCond %{REQUEST_URI}::$0 ^(/.+)/(.*)::\2$
     RewriteRule .* - [E=BASE:%1]

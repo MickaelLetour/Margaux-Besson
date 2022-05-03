@@ -6,15 +6,18 @@ $fontAbout : 'Bad Script', cursive;
 body, hr, .navbar, .container, .jumbotron, .card-title, .card-body, .modal-body{
     background-color: $BackgroundColor;
 }
+.navbar, footer {
+    min-height: 5vh;
+}
+.main {
+    min-height: 95vh;
+}
 hr{
     border: 2px solid $fontColor;
 }
 .titleGoldenBook, .portfolioTitle, .textGoldenBook{
     font-family: $fontTitle;
     font-size: 4rem;
-}
-.bookTitlePhoto{
-    min-height: 50vh;
 }
 .nameGoldenBook{
     font-family: $fontTitle;
@@ -43,7 +46,7 @@ hr{
 }
 .photoTitle{
     filter: grayscale(1);
-    -webkit-filter: grayscale(1); 
+    -webkit-filter: grayscale(1);
     &:hover {
         filter: grayscale(0);
         -webkit-filter: grayscale(0);
@@ -53,13 +56,13 @@ hr{
 .banner{
     width: 100%;
     height: 50vh;
-    object-fit: cover; 
+    object-fit: cover;
     object-position: 50% 10%;
 }
 #bannerTitle{
     position: absolute;
     color:$fontColor;
-    top:50%; 
+    top:50%;
     width: 100%;
     font-size: 5vw;
     text-align: center;
@@ -130,26 +133,29 @@ hr{
     }
 }
 @media only screen and (max-width: 991px) {
+    .divAboutPhoto, .GoldenCarre {
+        margin-top: 25px;
+    }
     .wrapper {
         display: grid;
-        grid-template-columns: repeat(4,1fr); 
-        grid-template-rows: repeat(8,1fr); 
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(8,1fr);
         grid-gap: 2vmin; // 2% de la valeur la plus petite entre la la hauteur et la largeur de la fenetre
         justify-items: center; // placement des elements par rapport a leurs parents dans le sens horizontal
         align-items: center;  // "" sens vertical
         img {
             filter: grayscale(1);
-            -webkit-filter: grayscale(1); 
+            -webkit-filter: grayscale(1);
             grid-column: span 2; // nombre de colonne utilisé par image
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); 
-            transition: all .25s; // vitesse de transition       
-            margin-bottom: -82%;           
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transition: all .25s; // vitesse de transition
+            margin-bottom: -82%;
             &:nth-child(3n + 1) {
                 grid-column: 2 / span 2; // commence a la colone 2 et prend 2 colonnes
-            } 
+            }
             &:nth-child(0n + 8) {
                 grid-column: 1 / span 2; // commence a la colone 2 et prend 2 colonnes
-            }   
+            }
             &:hover {
                 filter: grayscale(0);
                 -webkit-filter: grayscale(0);
@@ -157,7 +163,7 @@ hr{
                 transform: scale(1.5); // multiplie par 2 sa taille a la souris
             }
         }
-    }       
+    }
 }
 @media only screen and (min-width: 992px) {
     .portfolioTitle{
@@ -173,14 +179,14 @@ hr{
         img {
             margin-bottom: -82%;
             filter: grayscale(1);
-            -webkit-filter: grayscale(1); 
+            -webkit-filter: grayscale(1);
             grid-column: span 2; // nombre de colonne utilisé par image
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); // position X Y pour x=0 tout a gauche, pour y=0 tout en haut si x ou y =100 l inverse
             transform: scale(1); // modifier la taille
             transition: all .25s; // vitesse de transition
             &:nth-child(7n + 1) {
                 grid-column: 2 / span 2; // commence a la colone 2 et prend 2 colonnes
-            } 
+            }
             &:hover {
                 z-index: 2; // index de l image a la souris
                 transform: scale(1.5); // multiplie par 2 sa taille a la souris
